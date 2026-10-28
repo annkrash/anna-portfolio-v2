@@ -1,0 +1,745 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Анна Крашенинникова — архитектор</title>
+<meta name="description" content="Анна Крашенинникова, креативный архитектор: рабочая документация, коллажи-мудборды, ТЗ визуализаторам, подача подрамника, архитектурный рисунок.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Анна Крашенинникова — архитектор">
+<meta property="og:description" content="Креативный архитектор · магистр архитектуры · 5 лет опыта · Москва">
+<meta property="og:image" content="https://krashmaksim.github.io/anna-portfolio-v2/og.jpg">
+<meta name="theme-color" content="#f3f1ec">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23141414'/%3E%3Crect x='20' y='20' width='6' height='6' fill='%23c8161d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3f1ec;
+    --bg-2: #e9e6df;
+    --ink: #141414;
+    --mute: #77726a;
+    --line: rgba(20, 20, 20, .14);
+    --red: #c8161d;
+    --dark: #0f0e0d;
+    --dark-ink: #ece8e1;
+    --dark-mute: #8d877e;
+    --dark-line: rgba(236, 232, 225, .14);
+    --pad: clamp(16px, 4vw, 56px);
+    --maxw: 1640px;
+    --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 400 16px/1.6 Manrope, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  a { color: inherit; }
+  img { display: block; max-width: 100%; height: auto; background: var(--bg-2); }
+  .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
+  .mono { font-family: var(--mono); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; }
+  .red { color: var(--red); }
+
+  /* Шапка */
+  .top {
+    position: fixed; inset: 0 0 auto; z-index: 20; height: 60px;
+    display: flex; align-items: center; justify-content: space-between; gap: 24px;
+    padding: 0 var(--pad);
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(14px) saturate(1.4); -webkit-backdrop-filter: blur(14px) saturate(1.4);
+    border-bottom: 1px solid transparent; transition: border-color .3s, background .3s, color .3s;
+  }
+  .top.scrolled { border-bottom-color: var(--line); }
+  .top.on-dark { background: color-mix(in srgb, var(--dark) 78%, transparent); color: var(--dark-ink); border-bottom-color: var(--dark-line); }
+  .logo { text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: 500; letter-spacing: -.01em; white-space: nowrap; }
+  .logo i { width: 9px; height: 9px; background: var(--red); display: inline-block; }
+  .menu { display: flex; gap: 26px; }
+  .menu a { text-decoration: none; opacity: .55; transition: opacity .2s; white-space: nowrap; }
+  .menu a:hover, .menu a[aria-current] { opacity: 1; }
+  .menu a span { color: var(--red); margin-right: 6px; }
+  .cta {
+    text-decoration: none; background: var(--ink); color: var(--bg); padding: 9px 16px; border-radius: 999px;
+    font-size: 14px; font-weight: 500; white-space: nowrap; transition: background .2s;
+  }
+  .cta:hover { background: var(--red); }
+  .on-dark .cta { background: var(--dark-ink); color: var(--dark); }
+  .burger { display: none; background: none; border: 0; font: inherit; color: inherit; padding: 8px 0; cursor: pointer; }
+
+  /* Первый экран */
+  .hero { padding-top: clamp(96px, 14vh, 150px); }
+  .hero-kicker { display: flex; justify-content: space-between; gap: 16px; color: var(--mute); margin-bottom: clamp(16px, 3vw, 32px); }
+  h1 {
+    margin: 0; font-weight: 300; font-size: clamp(38px, 10.2vw, 190px); line-height: .9; letter-spacing: -.055em;
+  }
+  h1 .l2 { display: block; padding-left: .02em; }
+  .hero-row {
+    display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: clamp(24px, 4vw, 64px);
+    margin-top: clamp(28px, 4vw, 56px); align-items: end;
+  }
+  .hero-lead { font-size: clamp(18px, 1.5vw, 22px); line-height: 1.45; margin: 0 0 24px; max-width: 30em; }
+  .hero-meta { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; margin: 0 0 28px; color: var(--mute); }
+  .hero-meta dt { color: var(--ink); }
+  .hero-meta dd { margin: 0; }
+  .btns { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px;
+    border-radius: 999px; border: 1px solid currentColor; text-decoration: none; font-weight: 500; font-size: 15px;
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  .btn.solid { background: var(--red); border-color: var(--red); color: #fff; }
+  .btn:hover { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+  .btn svg { width: 16px; height: 16px; }
+  .strip { display: flex; gap: clamp(8px, 1vw, 14px); height: clamp(260px, 52vh, 600px); }
+  .strip a { flex: var(--r) 1 0; position: relative; overflow: hidden; text-decoration: none; min-width: 0; }
+  .strip img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+  .strip a:hover img { transform: scale(1.04); }
+  .strip span {
+    position: absolute; left: 10px; bottom: 10px; background: var(--bg); padding: 5px 9px; color: var(--ink);
+  }
+
+  /* Бегущая строка */
+  .ticker { border-block: 1px solid var(--line); margin-top: clamp(48px, 7vw, 96px); overflow: hidden; white-space: nowrap; }
+  .ticker div { display: inline-flex; gap: 48px; padding: 18px 0; animation: tick 38s linear infinite; font-size: clamp(20px, 2.4vw, 34px); font-weight: 300; letter-spacing: -.02em; }
+  .ticker b { font-weight: 300; color: var(--red); }
+  @keyframes tick { to { transform: translateX(-50%); } }
+
+  /* Общие блоки */
+  section { padding-top: clamp(80px, 11vw, 160px); }
+  .sec-head {
+    display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: clamp(16px, 3vw, 48px);
+    padding-bottom: clamp(28px, 4vw, 56px); margin-bottom: clamp(32px, 5vw, 72px); border-bottom: 1px solid var(--line);
+  }
+  .sec-num { font-family: var(--mono); font-size: 13px; color: var(--red); padding-top: .6em; }
+  h2 { margin: 0 0 18px; font-weight: 300; font-size: clamp(40px, 6.4vw, 108px); line-height: .95; letter-spacing: -.05em; }
+  .sec-head p { margin: 0; font-size: clamp(17px, 1.4vw, 21px); color: var(--mute); max-width: 36em; }
+
+  .proj {
+    display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: clamp(16px, 3vw, 48px);
+    margin-bottom: clamp(56px, 8vw, 120px);
+  }
+  .proj-meta { position: sticky; top: 84px; align-self: start; }
+  .proj-meta .idx { color: var(--red); }
+  h3 { margin: 10px 0 12px; font-weight: 400; font-size: clamp(22px, 2vw, 30px); line-height: 1.15; letter-spacing: -.025em; }
+  .proj-meta p { margin: 0 0 14px; color: var(--mute); }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tags li { list-style: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; }
+  .tags { padding: 0; margin: 0; }
+  .shots { display: grid; gap: clamp(8px, 1.2vw, 16px); }
+  .row { display: flex; gap: clamp(8px, 1.2vw, 16px); }
+  .row > img, .row > figure { flex: var(--r) 1 0; min-width: 0; }
+  .zoomable { cursor: zoom-in; }
+  figure { margin: 0; }
+  figcaption { margin-top: 10px; color: var(--mute); }
+
+  /* Список работ */
+  .index a {
+    display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; align-items: baseline; gap: 16px;
+    padding: clamp(18px, 2.4vw, 30px) 0; border-bottom: 1px solid var(--line); text-decoration: none;
+    transition: padding .35s cubic-bezier(.2,.7,.2,1), color .2s;
+  }
+  .index a:first-child { border-top: 1px solid var(--line); }
+  .index .t { font-size: clamp(26px, 4vw, 60px); font-weight: 300; letter-spacing: -.04em; line-height: 1.05; }
+  .index .c { color: var(--mute); text-align: right; }
+  .index a:hover { padding-left: 18px; color: var(--red); }
+  .peek {
+    position: fixed; z-index: 15; width: 300px; pointer-events: none; opacity: 0; transform: translate(-50%, -50%) scale(.9);
+    transition: opacity .25s, transform .25s; box-shadow: 0 30px 60px -20px rgba(0,0,0,.4);
+  }
+  .peek.on { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+  /* Обо мне */
+  .about { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 9fr); gap: clamp(16px, 3vw, 48px); }
+  .about-photo img { filter: grayscale(1); aspect-ratio: 829 / 1190; object-fit: cover; }
+  .about-photo figcaption { line-height: 1.5; }
+  .statement { font-size: clamp(26px, 3.4vw, 54px); font-weight: 300; line-height: 1.12; letter-spacing: -.035em; margin: 0 0 22px; }
+  .statement em { font-style: normal; color: var(--red); }
+  .sub { font-size: clamp(17px, 1.4vw, 21px); color: var(--mute); max-width: 38em; margin: 0 0 clamp(36px, 5vw, 64px); }
+  .stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); margin-bottom: clamp(36px, 5vw, 64px); }
+  .stats div { padding: 20px 16px 0 0; }
+  .stats b { display: block; font-weight: 300; font-size: clamp(36px, 4.6vw, 72px); letter-spacing: -.05em; line-height: 1; margin-bottom: 8px; }
+  .cv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(28px, 4vw, 56px) clamp(24px, 4vw, 64px); }
+  .cv h4 { margin: 0 0 6px; padding-bottom: 12px; border-bottom: 1px solid var(--line); font-family: var(--mono); font-weight: 500; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; }
+  .cv ul { list-style: none; margin: 0; padding: 0; }
+  .cv li { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .cv li > span { font-family: var(--mono); font-size: 12px; color: var(--mute); padding-top: 3px; }
+  .cv li b { font-weight: 500; display: block; }
+  .cv li small { color: var(--mute); font-size: 14px; display: block; line-height: 1.45; }
+  .cv .plain li { grid-template-columns: 1fr; }
+
+  /* Тёмный раздел */
+  .dark { background: var(--dark); color: var(--dark-ink); margin-top: clamp(80px, 11vw, 160px); padding-bottom: clamp(80px, 10vw, 140px); }
+  .dark .sec-head { border-color: var(--dark-line); }
+  .dark .sec-head p, .dark figcaption, .dark .proj-meta p { color: var(--dark-mute); }
+  .dark img { background: #1d1b19; }
+  .pair { display: flex; align-items: flex-start; gap: clamp(8px, 1.4vw, 20px); margin-bottom: clamp(48px, 7vw, 100px); }
+  .pair figure { flex: var(--r) 1 0; min-width: 0; }
+  .pair .arrow { flex: none; align-self: center; width: clamp(28px, 3vw, 44px); color: var(--red); }
+  .pair-head { display: flex; justify-content: space-between; gap: 16px; margin-bottom: 14px; color: var(--dark-mute); }
+  .pair-head b { color: var(--dark-ink); font-weight: 500; font-family: Manrope, sans-serif; text-transform: none; letter-spacing: -.01em; font-size: 16px; }
+  .credit { color: var(--dark-mute); max-width: 52em; }
+
+  /* Подрамники */
+  .pan-wrap { margin-bottom: clamp(56px, 8vw, 110px); }
+  .pan-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 18px; flex-wrap: wrap; }
+  .pan-head h3 { margin: 6px 0 0; max-width: 24em; }
+  .pan {
+    overflow-x: auto; overflow-y: hidden; cursor: grab; scrollbar-width: thin;
+    padding: 0 var(--pad) 12px; overscroll-behavior-x: contain;
+  }
+  .pan.drag { cursor: grabbing; }
+  .pan img { height: clamp(320px, 68vh, 760px); width: auto; max-width: none; user-select: none; -webkit-user-drag: none; }
+  .pan-hint { display: flex; align-items: center; gap: 10px; color: var(--mute); }
+  .pan-hint button { font: inherit; background: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; color: var(--ink); }
+  .pan-hint button:hover { border-color: var(--ink); }
+
+  /* Рисунок */
+  .draw-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(8px, 1.2vw, 16px); align-items: start; }
+  .award { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--red); color: var(--red); border-radius: 999px; padding: 6px 14px; margin-bottom: 14px; }
+
+  /* Контакты */
+  .contact { background: var(--red); color: #fff; margin-top: clamp(80px, 11vw, 160px); padding: clamp(64px, 9vw, 130px) 0 32px; }
+  .contact .mono { opacity: .75; }
+  .big-link {
+    display: block; text-decoration: none; font-weight: 300; font-size: clamp(30px, 7.4vw, 132px);
+    letter-spacing: -.05em; line-height: 1.02; border-bottom: 1px solid rgba(255,255,255,.35); padding: 10px 0 18px;
+    overflow-wrap: anywhere; transition: padding .35s cubic-bezier(.2,.7,.2,1);
+  }
+  .big-link:hover { padding-left: 16px; }
+  .contact-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: clamp(48px, 7vw, 96px); align-items: center; }
+  .contact .btn { border-color: rgba(255,255,255,.7); }
+  .contact .btn:hover { background: #fff; color: var(--red); border-color: #fff; }
+
+  /* Появление при прокрутке */
+  .js .rv { opacity: 0; transform: translateY(28px); transition: opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1); }
+  .js .rv.in { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .js .rv { opacity: 1; transform: none; transition: none; }
+    .ticker div { animation: none; }
+  }
+
+  /* Просмотрщик */
+  .lb { position: fixed; inset: 0; z-index: 50; background: #0b0a09; color: #fff; display: none; flex-direction: column; }
+  .lb.open { display: flex; }
+  .lb-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 8px 8px 18px; padding-top: max(8px, env(safe-area-inset-top)); color: #a9a298; flex: none; }
+  .lb-btns { display: flex; gap: 4px; }
+  .lb button { background: none; border: 0; color: #fff; width: 44px; height: 44px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
+  .lb button:hover { background: rgba(255,255,255,.12); }
+  .lb button svg { width: 22px; height: 22px; }
+  .lb-stage { flex: 1; overflow: auto; position: relative; display: grid; place-items: center; overscroll-behavior: contain; padding: 0 12px; }
+  .lb-stage img { max-width: 100%; max-height: 100%; background: none; cursor: zoom-in; user-select: none; -webkit-user-drag: none; }
+  .lb.zoomed .lb-stage { display: block; padding: 0; }
+  .lb.zoomed .lb-stage img { max-width: none; max-height: none; cursor: zoom-out; }
+  .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 2; background: rgba(0,0,0,.4) !important; }
+  .lb-prev { left: 8px; } .lb-next { right: 8px; }
+  .lb.zoomed .lb-nav { display: none; }
+  .lb-cap { text-align: center; color: #a9a298; padding: 10px 16px max(12px, env(safe-area-inset-bottom)); flex: none; }
+
+  @media (max-width: 1000px) {
+    .menu { display: none; }
+    .burger { display: block; }
+    .top.open .menu {
+      display: flex; flex-direction: column; gap: 0; position: absolute; top: 60px; left: 0; right: 0;
+      background: var(--bg); color: var(--ink); padding: 8px var(--pad) 20px; border-bottom: 1px solid var(--line);
+    }
+    .top.open .menu a { opacity: 1; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 20px; font-weight: 300; }
+    .hero-row, .sec-head, .proj, .about { grid-template-columns: 1fr; }
+    .proj-meta { position: static; }
+    .about-photo { max-width: 260px; }
+    .strip { order: -1; }
+  }
+  @media (max-width: 700px) {
+    .cta { display: none; }
+    .hero-kicker span:last-child { display: none; }
+    .strip { height: auto; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad); }
+    .strip a { flex: 0 0 auto; height: 300px; scroll-snap-align: start; }
+    .strip img { width: auto; height: 100%; max-width: none; }
+    .row.scroll { overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: var(--pad); margin: 0 calc(-1 * var(--pad)); padding: 0 var(--pad); }
+    .row.scroll > img { flex: 0 0 82%; scroll-snap-align: center; }
+    .row.stack, .pair { flex-direction: column; }
+    .row.stack > img, .row.stack > figure, .pair figure { flex: none; width: 100%; }
+    .pair .arrow { transform: rotate(90deg); margin: -4px 0; }
+    .stats { grid-template-columns: 1fr 1fr 1fr; }
+    .stats b { font-size: 34px; }
+    .cv { grid-template-columns: 1fr; }
+    .cv li { grid-template-columns: 92px minmax(0, 1fr); }
+    .index a { grid-template-columns: 44px minmax(0, 1fr); }
+    .index .c { grid-column: 2; text-align: left; }
+    .draw-grid { grid-template-columns: 1fr; }
+    .row.quad { flex-wrap: wrap; }
+    .row.quad > img { flex: 0 0 calc(50% - 5px); }
+    .pan img { height: 58vh; }
+    .lb-nav { display: none; }
+  }
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add("js")</script>
+
+<header class="top">
+  <a class="logo" href="#top"><i></i>Анна Крашенинникова</a>
+  <nav class="menu mono" aria-label="Разделы">
+    <a href="#about">Обо мне</a>
+    <a href="#ar"><span>01</span>Стадия АР</a>
+    <a href="#moodboard"><span>02</span>Мудборд</a>
+    <a href="#tz"><span>03</span>ТЗ визуализатору</a>
+    <a href="#podramnik"><span>04</span>Подрамник</a>
+    <a href="#drawing"><span>05</span>Рисунок</a>
+  </nav>
+  <a class="cta" href="#contact">Связаться</a>
+  <button class="burger mono" aria-expanded="false" aria-label="Открыть меню">Меню</button>
+</header>
+
+<main id="top">
+  <div class="hero wrap">
+    <div class="hero-kicker mono"><span>Портфолио · 2026</span><span>Архитектура · интерьер · графика</span></div>
+    <h1 class="rv">Анна<span class="l2">Крашенинникова</span></h1>
+    <div class="hero-row">
+      <div class="rv">
+        <p class="hero-lead">Креативный архитектор. Ищу визуальный образ проекта и довожу его до графической подачи.</p>
+        <dl class="hero-meta mono">
+          <dt>Город</dt><dd>Москва</dd>
+          <dt>Опыт</dt><dd>5 лет</dd>
+          <dt>Степень</dt><dd>Магистр архитектуры</dd>
+        </dl>
+        <div class="btns">
+          <a class="btn solid" href="#ar">Смотреть работы</a>
+          <a class="btn" href="Anna_Krasheninnikova_portfolio.pdf" download>PDF · 8 МБ</a>
+        </div>
+      </div>
+      <div class="strip rv">
+        <a href="#tz" style="--r:.935">[[tz-2c|Коллаж-ТЗ визуализатору: red room|(max-width: 700px) 300px, 24vw]]<span class="mono">03 · Коллаж-ТЗ</span></a>
+        <a href="#drawing" style="--r:.715">[[dr-maze|Архитектурный рисунок «Лабиринт»|(max-width: 700px) 220px, 18vw]]<span class="mono">05 · Рисунок</span></a>
+        <a href="#moodboard" style="--r:1.717">[[mb-1|Мудборд спальни|(max-width: 700px) 520px, 40vw]]<span class="mono">02 · Мудборд</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ticker mono-free" aria-hidden="true"><div>
+    <span>ArchiCAD</span><b>●</b><span>Autodesk Revit</span><b>●</b><span>Adobe Photoshop</span><b>●</b><span>Figma</span><b>●</b><span>Lumion</span><b>●</b><span>QGIS</span><b>●</b>
+    <span>ArchiCAD</span><b>●</b><span>Autodesk Revit</span><b>●</b><span>Adobe Photoshop</span><b>●</b><span>Figma</span><b>●</b><span>Lumion</span><b>●</b><span>QGIS</span><b>●</b>
+  </div></div>
+
+  <section id="about" class="wrap">
+    <div class="about">
+      <figure class="about-photo rv">
+        <img src="img/photo.webp" width="829" height="1190" alt="Анна Крашенинникова" loading="lazy">
+        <figcaption class="mono">Анна Крашенинникова<br>Креативный архитектор</figcaption>
+      </figure>
+      <div>
+        <p class="statement rv">В работе ценю <em>выразительную концепцию</em>, точность композиции и внимание к деталям.</p>
+        <p class="sub rv">Специализируюсь на быстром выполнении ТЗ, поиске визуального образа проекта, графической подаче, координации визуализаторов и архитекторов.</p>
+        <div class="stats rv">
+          <div><b>5</b><span class="mono">лет опыта</span></div>
+          <div><b>7</b><span class="mono">наград и дипломов</span></div>
+          <div><b>6</b><span class="mono">программ в работе</span></div>
+        </div>
+        <div class="cv">
+          <div class="rv">
+            <h4>Опыт</h4>
+            <ul>
+              <li><span>09.2024 — 07.2026</span><div><b>Креативный архитектор</b><small>Pergaev Bureau · архитектура и проектирование · 1 год 11 месяцев</small></div></li>
+              <li><span>09.2020 — 05.2024</span><div><b>Архитектор-дизайнер</b><small>Фриланс, частная практика · 3 года 9 месяцев</small></div></li>
+            </ul>
+          </div>
+          <div class="rv">
+            <h4>Образование</h4>
+            <ul>
+              <li><span>2024 — 2026</span><div><b>Магистр архитектуры</b><small>Уфимский государственный нефтяной технический университет, архитектурно-строительный факультет</small></div></li>
+              <li><span>2019 — 2024</span><div><b>Бакалавр архитектуры</b><small>УГНТУ, архитектурно-строительный факультет</small></div></li>
+              <li><span>06—07.2023</span><div><b>Преддипломная практика</b><small>Архитектурное бюро «Студия 44», Санкт-Петербург</small></div></li>
+              <li><span>06—07.2022</span><div><b>Производственная практика</b><small>Архитектурное бюро «Ахмадуллин Архитектс», Уфа</small></div></li>
+              <li><span>2012 — 2015</span><div><b>Художественное образование</b><small>Художественная школа № 1 им. А. Кузнецова, Уфа</small></div></li>
+            </ul>
+          </div>
+          <div class="rv">
+            <h4>Награды</h4>
+            <ul>
+              <li><span>2026</span><div><b>Диплом I степени</b><small>XXVI Международный форум «Новые идеи нового века — 2026», номинация «Архитектура», проект «Реконструкция квартала № 420 в г. Уфе»</small></div></li>
+              <li><span>2026</span><div><b>Диплом III степени</b><small>Международный фестиваль «Дни архитектуры», «Студенческие работы», категория «Дипломные работы», проект по реновации территории</small></div></li>
+              <li><span>2024</span><div><b>Первый приз</b><small>Китайско-российский студенческий конкурс на эскиз-идею по градостроительному и архитектурному проектированию</small></div></li>
+              <li><span>2024</span><div><b>Финалист и специальный приз</b><small>Международный архитектурный конкурс Saint-Gobain</small></div></li>
+              <li><span>2023</span><div><b>Первое место</b><small>XXIII Международный форум «Новые идеи нового века», «Архитектурный рисунок»</small></div></li>
+              <li><span>2022</span><div><b>Второе место</b><small>XXII Международный форум «Новые идеи нового века», «Архитектурный рисунок»</small></div></li>
+              <li><span>2021</span><div><b>Первое место</b><small>Межрегиональный молодёжный форум «Городские реновации 2.0», «Концепция развития кампуса УГНТУ»</small></div></li>
+            </ul>
+          </div>
+          <div class="rv">
+            <h4>Инструменты</h4>
+            <ul class="plain">
+              <li><div><b>ArchiCAD · Autodesk Revit · Adobe Photoshop · Figma · Lumion · QGIS</b></div></li>
+            </ul>
+            <h4 style="margin-top:32px">Языки</h4>
+            <ul class="plain">
+              <li><div><b>Русский — родной</b><small>Английский — B1</small></div></li>
+            </ul>
+            <h4 style="margin-top:32px">Интересы</h4>
+            <ul class="plain">
+              <li><div><b>Архитектурная графика, анимация, GameDev, путешествия</b></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="works" class="wrap">
+    <p class="mono red rv" style="margin:0 0 18px">Содержание</p>
+    <nav class="index rv" aria-label="Работы">
+      <a href="#ar" data-peek="img/ar-plan-s.webp"><span class="mono red">01</span><span class="t">Стадия АР</span><span class="c mono">Планы · схемы · разрезы · фасады · генплан</span></a>
+      <a href="#moodboard" data-peek="img/mb-main-s.webp"><span class="mono red">02</span><span class="t">Коллаж как мудборд</span><span class="c mono">4 коллажа</span></a>
+      <a href="#tz" data-peek="img/tz-3c-s.webp"><span class="mono red">03</span><span class="t">Коллаж как ТЗ визуализатору</span><span class="c mono">5 пар коллаж → рендер</span></a>
+      <a href="#podramnik" data-peek="img/pod-1-s.webp"><span class="mono red">04</span><span class="t">Подача подрамника</span><span class="c mono">3 проекта · 2023—2026</span></a>
+      <a href="#drawing" data-peek="img/dr-zur-s.webp"><span class="mono red">05</span><span class="t">Архитектурный рисунок</span><span class="c mono">6 листов · 2021—2023</span></a>
+    </nav>
+  </section>
+
+  <section id="ar" class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-num">01 / 05</div>
+      <div><h2>Стадия АР</h2><p>Схемы, планировочные решения, фасады, разрезы и другие графические части проектно-рабочей документации.</p></div>
+    </div>
+
+    <article class="proj">
+      <div class="proj-meta rv">
+        <span class="mono idx">01.1</span>
+        <h3>Планировочное решение квартиры</h3>
+        <p>Финальный вариант планировки с вариантом санузла. Выполнено в рамках работы в SloyArch.</p>
+        <ul class="tags mono"><li>2026</li><li>ArchiCAD</li></ul>
+      </div>
+      <div class="shots rv">[[ar-plan|Планировочное решение квартиры, финальный вариант]]</div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-meta rv">
+        <span class="mono idx">01.2</span>
+        <h3>Функциональная схема спа-комплекса</h3>
+        <p>Зонирование: хамам, зал йоги, спортзал, сауна, раздевалки, душевые, спа-зона. План и аксонометрия. Выполнено в Pergaev Bureau.</p>
+        <ul class="tags mono"><li>2026</li><li>Revit</li></ul>
+      </div>
+      <div class="shots rv">[[ar-func|Функциональная схема: план с условными обозначениями]][[ar-func-axo|Функциональная схема: аксонометрия]]</div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-meta rv">
+        <span class="mono idx">01.3</span>
+        <h3>Взрыв-схема</h3>
+        <p>Вариант оформления аксонометрий в коллажной подаче.</p>
+        <ul class="tags mono"><li>Коллаж</li><li>Аксонометрия</li></ul>
+      </div>
+      <div class="shots rv">
+        [[ar-axo-1|Аксонометрия в коллажной подаче, вариант 1]]
+        <div class="row scroll">[[ar-axo-2|Аксонометрия в коллажной подаче, вариант 2|(max-width: 700px) 82vw, 36vw]][[ar-axo-3|Аксонометрия в коллажной подаче, вариант 3|(max-width: 700px) 82vw, 36vw]]</div>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-meta rv">
+        <span class="mono idx">01.4</span>
+        <h3>Разрезы и фасады</h3>
+        <p>Курсовой проект на бакалавриате.</p>
+        <ul class="tags mono"><li>2024</li><li>ArchiCAD</li><li>Photoshop</li></ul>
+      </div>
+      <div class="shots rv">
+        <div class="row stack">[[ar-sec-1|Разрез, М 1:500|(max-width: 700px) 100vw, 40vw]][[ar-sec-2|Разрезы высотных корпусов|(max-width: 700px) 100vw, 30vw]]</div>
+        [[ar-fac-1|Фасад]]
+        [[ar-fac-2|Развёртка фасадов по улице]]
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-meta rv">
+        <span class="mono idx">01.5</span>
+        <h3>Генеральный план</h3>
+        <p>Бакалаврская дипломная работа: квартал между улицами Чернышевского, Карла Маркса и Коммунистической в Уфе.</p>
+        <ul class="tags mono"><li>2024</li><li>ArchiCAD</li><li>Photoshop</li></ul>
+      </div>
+      <div class="shots rv" style="max-width:820px">[[ar-gen|Генеральный план квартала|(max-width: 1000px) 100vw, 50vw]]</div>
+    </article>
+  </section>
+
+  <section id="moodboard" class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-num">02 / 05</div>
+      <div><h2>Коллаж как мудборд</h2><p>Сборка мудборда с позициями из закупа, чтобы показать заказчику образ будущего интерьера.</p></div>
+    </div>
+
+    <article class="proj">
+      <div class="proj-meta rv">
+        <span class="mono idx">02.1</span>
+        <h3>Мудборд с подбором отделки</h3>
+        <p>Декоративная штукатурка, паркетная доска, плитка, керамогранит. На месте отделки могут быть закупные позиции мебели, света или декора.</p>
+        <ul class="tags mono"><li>Гостиная</li><li>Закуп</li></ul>
+      </div>
+      <div class="shots rv">[[mb-main|Мудборд гостиной с образцами отделки]]</div>
+    </article>
+
+    <article class="proj">
+      <div class="proj-meta rv">
+        <span class="mono idx">02.2</span>
+        <h3>Мудборды без подбора аналогов</h3>
+        <p>Спальня, кухня-столовая, кабинет: настроение пространства без привязки к конкретным позициям.</p>
+        <ul class="tags mono"><li>Жилой интерьер</li></ul>
+      </div>
+      <div class="shots rv">
+        [[mb-1|Мудборд спальни]]
+        <div class="row stack">[[mb-2|Мудборд кухни-столовой|(max-width: 700px) 100vw, 36vw]][[mb-3|Мудборд кабинета|(max-width: 700px) 100vw, 36vw]]</div>
+      </div>
+    </article>
+  </section>
+
+  <section id="tz" class="dark">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-num">03 / 05</div>
+        <div><h2>Коллаж как ТЗ визуализатору</h2><p>Быстрый набросок идеи: показать визуализатору будущий образ пространства и выдать ТЗ на его основе со ссылками на закуп и габаритами конструкций.</p></div>
+      </div>
+
+      <div class="pair-head mono rv"><b>Red room · зона отдыха</b><span>Коллаж → визуализация</span></div>
+      <div class="pair rv">
+        <figure style="--r:.953">[[tz-1c|Коллаж-ТЗ: зона отдыха с красными креслами|(max-width: 700px) 100vw, 46vw]]<figcaption class="mono">Коллаж с привязкой закупных позиций и текстур</figcaption></figure>
+        <svg class="arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 12h38M28 2l10 10-10 10"/></svg>
+        <figure style="--r:.679">[[tz-1r|Визуализация зоны отдыха по коллажу|(max-width: 700px) 100vw, 34vw]]<figcaption class="mono">Визуализация</figcaption></figure>
+      </div>
+
+      <div class="pair-head mono rv"><b>Red room · студия</b><span>Коллаж → визуализация</span></div>
+      <div class="pair rv">
+        <figure style="--r:.935">[[tz-2c|Коллаж-ТЗ: студия red room|(max-width: 700px) 100vw, 46vw]]</figure>
+        <svg class="arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 12h38M28 2l10 10-10 10"/></svg>
+        <figure style="--r:.664">[[tz-2r|Визуализация студии red room|(max-width: 700px) 100vw, 34vw]]</figure>
+      </div>
+
+      <div class="pair-head mono rv"><b>Red room · лаунж за шторой</b><span>Коллаж → визуализация</span></div>
+      <div class="pair rv">
+        <figure style="--r:.98">[[tz-3c|Коллаж-ТЗ: лаунж с красными шторами|(max-width: 700px) 100vw, 46vw]]</figure>
+        <svg class="arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 12h38M28 2l10 10-10 10"/></svg>
+        <figure style="--r:.648">[[tz-3r|Визуализация лаунжа с красными шторами|(max-width: 700px) 100vw, 34vw]]</figure>
+      </div>
+
+      <div class="pair-head mono rv"><b>Ресторанный зал · сцена</b><span>Коллаж → визуализация</span></div>
+      <div class="pair rv">
+        <figure style="--r:2.163">[[tz-4c|Коллаж-ТЗ: ресторанный зал со сценой|(max-width: 700px) 100vw, 46vw]]</figure>
+        <svg class="arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 12h38M28 2l10 10-10 10"/></svg>
+        <figure style="--r:1.779">[[tz-4r|Визуализация ресторанного зала со сценой|(max-width: 700px) 100vw, 40vw]]</figure>
+      </div>
+
+      <div class="pair-head mono rv"><b>Ресторанный зал · лаунж</b><span>Коллаж → визуализация</span></div>
+      <div class="pair rv">
+        <figure style="--r:1.919">[[tz-5c|Коллаж-ТЗ: лаунж ресторана|(max-width: 700px) 100vw, 46vw]]</figure>
+        <svg class="arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M0 12h38M28 2l10 10-10 10"/></svg>
+        <figure style="--r:1.779">[[tz-5r|Визуализация лаунжа ресторана|(max-width: 700px) 100vw, 40vw]]</figure>
+      </div>
+
+      <p class="credit mono rv">Коллажи — Анна Крашенинникова. Визуализации выполнены визуализаторами в рамках работы над проектами в Pergaev Bureau в 2026 г.</p>
+    </div>
+  </section>
+
+  <section id="podramnik">
+    <div class="wrap">
+      <div class="sec-head rv">
+        <div class="sec-num">04 / 05</div>
+        <div><h2>Подача подрамника</h2><p>Формирование всей графической информации проекта на планшете заданного формата.</p></div>
+      </div>
+    </div>
+
+    <div class="pan-wrap rv">
+      <div class="wrap pan-head">
+        <div><span class="mono red">04.1 · 2024 · Бакалаврская дипломная работа</span><h3>Реконструкция квартала № 420 в г. Уфе</h3></div>
+        <div class="pan-hint mono"><span>← листайте →</span><button data-open="pod-1">Целиком</button></div>
+      </div>
+      <div class="pan">[[pod-1|Подрамник: реконструкция квартала № 420 в г. Уфе|(max-width: 700px) 1700px, 2200px]]</div>
+    </div>
+
+    <div class="pan-wrap rv">
+      <div class="wrap pan-head">
+        <div><span class="mono red">04.2 · 2026 · Магистерская диссертация</span><h3>Прогностический потенциал утопических нарративов в архитектуре</h3></div>
+        <div class="pan-hint mono"><span>← листайте →</span><button data-open="pod-2">Целиком</button></div>
+      </div>
+      <div class="pan">[[pod-2|Подрамник: прогностический потенциал утопических нарративов в архитектуре|(max-width: 700px) 1600px, 2000px]]</div>
+    </div>
+
+    <div class="pan-wrap rv">
+      <div class="wrap pan-head">
+        <div><span class="mono red">04.3 · 2023 · Курсовой проект</span><h3>Общественный центр</h3></div>
+        <div class="pan-hint mono"><span>← листайте →</span><button data-open="pod-3">Целиком</button></div>
+      </div>
+      <div class="pan">[[pod-3|Подрамник: курсовой проект «Общественный центр»|(max-width: 700px) 1200px, 1500px]]</div>
+    </div>
+  </section>
+
+  <section id="drawing" class="wrap">
+    <div class="sec-head rv">
+      <div class="sec-num">05 / 05</div>
+      <div><h2>Архитектурный рисунок</h2><p>Выразить мысль рисунком.</p></div>
+    </div>
+
+    <div class="draw-grid">
+      <figure class="rv">[[dr-maze|«Лабиринт», А1, графика, 2023|(max-width: 700px) 100vw, 40vw]]</figure>
+      <div class="rv">
+        <span class="award mono">Диплом I степени</span>
+        <h3>«Лабиринт»</h3>
+        <p style="color:var(--mute);margin:0 0 14px">А1, графика, 2023. XXIII Международный форум «Новые идеи нового века», номинация «Архитектурный рисунок».</p>
+        <figure style="margin-top:clamp(32px,5vw,72px)">[[dr-zur|«Зур-Рахмат», А2, графика, 2021|(max-width: 700px) 100vw, 55vw]]<figcaption class="mono">«Зур-Рахмат», А2, графика, 2021 · участник международного конкурса</figcaption></figure>
+      </div>
+    </div>
+
+    <figure class="rv" style="margin-top:clamp(40px,6vw,96px)">
+      <div class="row quad">[[dr-t1|Трансформация «Торс», этап 1|(max-width: 700px) 50vw, 24vw]][[dr-t2|Трансформация «Торс», этап 2|(max-width: 700px) 50vw, 24vw]][[dr-t3|Трансформация «Венера», этап 1|(max-width: 700px) 50vw, 24vw]][[dr-t4|Трансформация «Венера», этап 2|(max-width: 700px) 50vw, 24vw]]</div>
+      <figcaption class="mono">Трансформации «Торс» и «Венера», графика, 75×55, 2022</figcaption>
+    </figure>
+  </section>
+</main>
+
+<footer id="contact" class="contact">
+  <div class="wrap">
+    <p class="mono">Контакты</p>
+    <a class="big-link" href="mailto:annkrash@gmail.com">annkrash@gmail.com</a>
+    <a class="big-link" href="tel:+79996236848">+7 999 623-68-48</a>
+    <div class="contact-foot">
+      <div class="btns">
+        <a class="btn" href="Anna_Krasheninnikova_portfolio.pdf" download>Скачать PDF</a>
+        <a class="btn" href="https://krashmaksim.github.io/anna-portfolio/">Классическая версия</a>
+      </div>
+      <span class="mono">Москва · © 2026 Анна Крашенинникова</span>
+    </div>
+  </div>
+</footer>
+
+<img class="peek" alt="" aria-hidden="true">
+
+<div class="lb" role="dialog" aria-modal="true" aria-label="Просмотр работы">
+  <div class="lb-top mono">
+    <span class="lb-count"></span>
+    <div class="lb-btns">
+      <button class="lb-zoom" aria-label="Увеличить"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5M11 8.5v5M8.5 11h5"/></svg></button>
+      <button class="lb-close" aria-label="Закрыть"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-nav lb-prev" aria-label="Предыдущая работа"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m15 5-7 7 7 7"/></svg></button>
+    <img alt="">
+    <button class="lb-nav lb-next" aria-label="Следующая работа"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 5 7 7-7 7"/></svg></button>
+  </div>
+  <div class="lb-cap mono"></div>
+</div>
+
+<script>
+  // Шапка: тень при прокрутке, тёмный режим над тёмным разделом, активный пункт меню
+  const top_ = document.querySelector(".top"), dark = document.querySelector(".dark");
+  const onScroll = () => {
+    top_.classList.toggle("scrolled", scrollY > 10);
+    const r = dark.getBoundingClientRect();
+    top_.classList.toggle("on-dark", r.top < 60 && r.bottom > 60);
+  };
+  addEventListener("scroll", onScroll, { passive: true }); onScroll();
+
+  const links = [...document.querySelectorAll(".menu a")];
+  const secObs = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting) links.forEach(a => a.toggleAttribute("aria-current", a.hash === "#" + e.target.id));
+  }), { rootMargin: "-45% 0px -50% 0px" });
+  document.querySelectorAll("section[id]").forEach(s => secObs.observe(s));
+
+  const burger = document.querySelector(".burger");
+  burger.onclick = () => { const o = top_.classList.toggle("open"); burger.setAttribute("aria-expanded", o); burger.textContent = o ? "Закрыть" : "Меню"; };
+  document.querySelectorAll(".menu a").forEach(a => a.addEventListener("click", () => { top_.classList.remove("open"); burger.textContent = "Меню"; }));
+
+  // Появление при прокрутке
+  const rvObs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); rvObs.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
+  document.querySelectorAll(".rv").forEach(el => rvObs.observe(el));
+
+  // Превью при наведении на пункт содержания
+  const peek = document.querySelector(".peek");
+  if (matchMedia("(hover: hover)").matches) {
+    document.querySelectorAll("[data-peek]").forEach(a => {
+      a.addEventListener("mouseenter", () => { peek.src = a.dataset.peek; peek.classList.add("on"); });
+      a.addEventListener("mouseleave", () => peek.classList.remove("on"));
+      a.addEventListener("mousemove", e => { peek.style.left = e.clientX + 170 + "px"; peek.style.top = e.clientY + "px"; });
+    });
+  }
+
+  // Подрамники: перетаскивание мышью
+  document.querySelectorAll(".pan").forEach(p => {
+    let x0 = 0, s0 = 0, down = false;
+    p.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; down = true; p.moved = false; x0 = e.clientX; s0 = p.scrollLeft; });
+    addEventListener("pointermove", e => { if (!down) return; const dx = e.clientX - x0; if (Math.abs(dx) > 4) { p.moved = true; p.classList.add("drag"); } p.scrollLeft = s0 - dx; });
+    addEventListener("pointerup", () => { down = false; p.classList.remove("drag"); });
+  });
+
+  // Просмотрщик
+  const items = [...document.querySelectorAll("main img[data-full]")].filter((im, i, a) => a.findIndex(o => o.dataset.full === im.dataset.full) === i);
+  items.forEach(im => im.classList.add("zoomable"));
+  const lb = document.querySelector(".lb"), stage = lb.querySelector(".lb-stage"), big = stage.querySelector("img");
+  const count = lb.querySelector(".lb-count"), cap = lb.querySelector(".lb-cap");
+  let cur = 0, lastFocus = null;
+
+  function show(i) {
+    cur = (i + items.length) % items.length;
+    unzoom();
+    const it = items[cur];
+    big.src = it.currentSrc || it.src;
+    const hi = new Image();
+    hi.onload = () => { if (items[cur] === it) big.src = hi.src; };
+    hi.src = it.dataset.full;
+    big.alt = it.alt; cap.textContent = it.alt;
+    count.textContent = `${cur + 1} / ${items.length}`;
+  }
+  function open(i) {
+    lastFocus = document.activeElement;
+    lb.classList.add("open"); document.body.style.overflow = "hidden";
+    show(i); lb.querySelector(".lb-close").focus();
+    history.pushState({ lb: 1 }, "");
+  }
+  function close(fromHistory) {
+    if (!lb.classList.contains("open")) return;
+    lb.classList.remove("open"); document.body.style.overflow = "";
+    unzoom(); lastFocus?.focus();
+    if (!fromHistory && history.state?.lb) history.back();
+  }
+  function zoom(cx, cy) {
+    const r = big.getBoundingClientRect(), ratio = big.naturalWidth / big.naturalHeight || 1.4;
+    const fx = cx != null ? (cx - r.left) / r.width : .5, fy = cy != null ? (cy - r.top) / r.height : .5;
+    const w = Math.max(r.width * 2.2, stage.clientHeight * ratio, 1200);
+    lb.classList.add("zoomed"); big.style.width = w + "px";
+    stage.scrollLeft = fx * w - stage.clientWidth / 2;
+    stage.scrollTop = fy * (w / ratio) - stage.clientHeight / 2;
+  }
+  function unzoom() { lb.classList.remove("zoomed"); big.style.width = ""; stage.scrollTo(0, 0); }
+
+  document.addEventListener("click", e => {
+    const im = e.target.closest("main img[data-full]");
+    if (im) {
+      if (im.closest(".pan")?.moved) return;
+      if (im.closest(".strip")) return;
+      e.preventDefault();
+      open(items.findIndex(o => o.dataset.full === im.dataset.full));
+    }
+    const b = e.target.closest("[data-open]");
+    if (b) open(items.findIndex(o => o.dataset.full.includes("/" + b.dataset.open + "-")));
+  });
+  big.addEventListener("click", e => lb.classList.contains("zoomed") ? unzoom() : zoom(e.clientX, e.clientY));
+  lb.querySelector(".lb-zoom").onclick = () => lb.classList.contains("zoomed") ? unzoom() : zoom();
+  lb.querySelector(".lb-close").onclick = () => close();
+  lb.querySelector(".lb-prev").onclick = () => show(cur - 1);
+  lb.querySelector(".lb-next").onclick = () => show(cur + 1);
+  stage.addEventListener("click", e => { if (e.target === stage) close(); });
+  addEventListener("popstate", () => close(true));
+  addEventListener("keydown", e => {
+    if (!lb.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    else if (e.key === "ArrowRight" && !lb.classList.contains("zoomed")) show(cur + 1);
+    else if (e.key === "ArrowLeft" && !lb.classList.contains("zoomed")) show(cur - 1);
+  });
+  let sx = null, sy = 0;
+  stage.addEventListener("touchstart", e => { sx = e.touches.length === 1 && !lb.classList.contains("zoomed") ? e.touches[0].clientX : null; sy = e.touches[0].clientY; }, { passive: true });
+  stage.addEventListener("touchend", e => {
+    if (sx == null || (window.visualViewport && visualViewport.scale > 1.01)) return;
+    const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) show(cur + (dx < 0 ? 1 : -1));
+    sx = null;
+  });
+</script>
+</body>
+</html>
